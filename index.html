@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chemistry Gas Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bubbles"></div>
+
+    <!-- PAGE 1 -->
+    <div class="content" id="page-1">
+        <h1>Experimental Chemistry Gas Collection</h1>
+        <button class="nav-btn" id="start-btn">Start</button>
+        <audio id="audio1" src="audio/audio1.wav"></audio>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="content" id="page-2" style="display: none;">
+        <h1>In this interactive activity, you will learn the 3 methods of collecting gases.</h1>
+        <div class="methods">
+            <div>1. Water Displacement</div>
+            <div>2. Downward Delivery</div>
+            <div>3. Upward Delivery</div>
+        </div>
+        <div class="nav-arrows">
+            <button class="arrow-btn" id="back-to-1">BACK</button>
+            <button class="arrow-btn" id="next-to-3">NEXT</button>
+        </div>
+        <audio id="audio2" src="audio/audio2.wav"></audio>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="content" id="page-3" style="display: none;">
+
+        <h2 class="page3-title">The method used to collect a gas depends on<br> the following physical properties of the
+            gas:</h2>
+        <table class="info-table-large">
+            <tr>
+                <th><span id="solubility-th" style="visibility:hidden;">Solubility</span></th>
+                <td><span id="solubility-td" style="visibility:hidden;">how easily the gas dissolves in water</span>
+                </td>
+            </tr>
+            <tr>
+                <th><span id="density-th" style="visibility:hidden;">Density</span></th>
+                <td><span id="density-td" style="visibility:hidden;">how dense the gas is compared to the surrounding
+                        air</span></td>
+            </tr>
+        </table>
+
+        <div class="nav-arrows">
+            <button class="arrow-btn" id="back-to-2">BACK</button>
+            <button class="arrow-btn" id="next-to-main">NEXT</button>
+        </div>
+        <audio id="audio3" src="audio/audio3.wav"></audio>
+    </div>
+
+    <!-- MAIN SCREEN -->
+    <div class="content" id="main-screen" style="display: none;">
+        <h1>SELECT THE GAS YOU WOULD LIKE TO COLLECT</h1>
+        <div class="options">
+            <button class="gas-btn" data-gas="Hydrogen">Hydrogen</button>
+            <button class="gas-btn" data-gas="Chlorine">Chlorine</button>
+            <button class="gas-btn" data-gas="Ammonia">Ammonia</button>
+        </div>
+        <div class="nav-arrows">
+            <button class="arrow-btn" id="back-to-3">BACK</button>
+            <button class="arrow-btn" id="back-to-home">HOME</button>
+        </div>
+        <audio id="audio4" src="audio/audio4.wav"></audio>
+    </div>
+
+    <!-- GAS SCREEN -->
+    <div class="gas-page" id="gas-screen" style="display:none;">
+        <h2 id="gas-title"></h2>
+
+        <div class="question-container">
+            <div class="question-block" id="solubility-block">
+                <p class="gas-question">Is the gas soluble in water?</p>
+
+                <div class="answer-options">
+                    <button class="answer-btn solubility" data-answer="Soluble">Soluble</button>
+                    <button class="answer-btn solubility" data-answer="Insoluble/slightly soluble">Insoluble/slightly
+                        soluble</button>
+                </div>
+
+                <!-- Corrected: only ONE feedback, using the new class -->
+                <div class="feedback-soluble"></div>
+            </div>
+
+            <div class="question-block" id="density-block">
+                <p class="gas-question">Is the gas denser than air?</p>
+
+                <div class="answer-options">
+                    <button class="answer-btn density" data-answer="Yes">Yes</button>
+                    <button class="answer-btn density" data-answer="No">No</button>
+                </div>
+
+                <!-- Corrected: only ONE feedback, using the new class -->
+                <div class="feedback-density"></div>
+            </div>
+
+        </div>
+
+        <button class="nav-btn" id="open-modal-btn" style="display: none;">Water Displacement</button>
+
+        <div class="modal" id="displacement-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-modal-btn">X</button>
+                <h2>Water Displacement</h2>
+                <video id="demo-video" width="100%" controls>
+                    <source src="demonstration/waterDisplacement.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="nav-arrows">
+            <button class="arrow-btn" id="back-to-main">BACK</button>
+        </div>
+
+        <!-- Hydrogen audios -->
+        <audio id="audioHydrogen" src="audio/audio5.wav"></audio>
+        <audio id="audioHydrogenCorrect" src="audio/audio6.wav"></audio>
+        <audio id="audioHydrogenSolubleWrong" src="audio/audio7.wav"></audio>
+        <audio id="audioHydrogenDensityWrong" src="audio/audio8.wav"></audio>
+        <audio id="audioHydrogenModal" src="audio/audio9.wav"></audio>
+
+        <!-- Chlorine audios -->
+        <audio id="audioChlorine" src="audio/audio10.wav"></audio>
+        <audio id="audioChlorineCorrect" src="audio/audio11.wav"></audio>
+        <audio id="audioChlorineSolubleWrong" src="audio/audio12.wav"></audio>
+        <audio id="audioChlorineDensityWrong" src="audio/audio13.wav"></audio>
+        <audio id="audioChlorineModal" src="audio/audio14.wav"></audio>
+
+        <!-- Ammonia audios -->
+        <audio id="audioAmmonia" src="audio/audio15.wav"></audio>
+        <audio id="audioAmmoniaCorrect" src="audio/audio16.wav"></audio>
+        <audio id="audioAmmoniaSolubleWrong" src="audio/audio17.wav"></audio>
+        <audio id="audioAmmoniaDensityWrong" src="audio/audio18.wav"></audio>
+        <audio id="audioAmmoniaModal" src="audio/audio19.wav"></audio>
+    </div>
+    <script>
+        let page2Timeouts = [];
+        let page3Timeouts = [];
+
+        function resetPage2Methods() {
+            const methodItems = document.querySelectorAll("#page-2 .methods div");
+            methodItems.forEach(m => m.classList.remove("method-highlight"));
+        }
+
+        function clearPage2Timeouts() {
+            page2Timeouts.forEach(t => clearTimeout(t));
+            page2Timeouts = [];
+        }
+
+        function startPage2Timing() {
+            clearPage2Timeouts();
+            resetPage2Methods();
+
+            const methodItems = document.querySelectorAll("#page-2 .methods div");
+
+            function highlightMethod(index) {
+                resetPage2Methods();
+                methodItems[index].classList.add("method-highlight");
+            }
+
+            // Store timeout IDs
+            page2Timeouts.push(setTimeout(() => highlightMethod(0), 8000));
+            page2Timeouts.push(setTimeout(() => highlightMethod(1), 10000));
+            page2Timeouts.push(setTimeout(() => highlightMethod(2), 12000));
+            page2Timeouts.push(setTimeout(() => resetPage2Methods(), 14000));
+        }
+
+        function resetPage3Table() {
+            document.getElementById('solubility-th').style.visibility = 'hidden';
+            document.getElementById('solubility-td').style.visibility = 'hidden';
+            document.getElementById('density-th').style.visibility = 'hidden';
+            document.getElementById('density-td').style.visibility = 'hidden';
+        }
+
+        function clearPage3Timeouts() {
+            page3Timeouts.forEach(t => clearTimeout(t));
+            page3Timeouts = [];
+        }
+
+        function startPage3Timing() {
+            clearPage3Timeouts();
+            resetPage3Table();
+
+            page3Timeouts.push(setTimeout(() => {
+                document.getElementById('solubility-th').style.visibility = 'visible';
+                document.getElementById('solubility-td').style.visibility = 'visible';
+            }, 6000));
+
+            page3Timeouts.push(setTimeout(() => {
+                document.getElementById('density-th').style.visibility = 'visible';
+                document.getElementById('density-td').style.visibility = 'visible';
+            }, 11000));
+        }
+
+        // ====== Audio element references ======
+        const audio1 = document.getElementById('audio1');
+        const audio2 = document.getElementById('audio2');
+        const audio3 = document.getElementById('audio3');
+        const audio4 = document.getElementById('audio4');
+
+        // Hydrogen audios
+        const audioHydrogen = document.getElementById('audioHydrogen');
+        const audioHydrogenCorrect = document.getElementById('audioHydrogenCorrect');
+        const audioHydrogenSolubleWrong = document.getElementById('audioHydrogenSolubleWrong');
+        const audioHydrogenDensityWrong = document.getElementById('audioHydrogenDensityWrong');
+        const audioHydrogenModal = document.getElementById('audioHydrogenModal');
+
+        // Chlorine audios
+        const audioChlorine = document.getElementById('audioChlorine');
+        const audioChlorineCorrect = document.getElementById('audioChlorineCorrect');
+        const audioChlorineSolubleWrong = document.getElementById('audioChlorineSolubleWrong');
+        const audioChlorineDensityWrong = document.getElementById('audioChlorineDensityWrong');
+        const audioChlorineModal = document.getElementById('audioChlorineModal');
+
+        // Ammonia audios
+        const audioAmmonia = document.getElementById('audioAmmonia');
+        const audioAmmoniaCorrect = document.getElementById('audioAmmoniaCorrect');
+        const audioAmmoniaSolubleWrong = document.getElementById('audioAmmoniaSolubleWrong');
+        const audioAmmoniaDensityWrong = document.getElementById('audioAmmoniaDensityWrong');
+        const audioAmmoniaModal = document.getElementById('audioAmmoniaModal');
+
+        // ====== Page elements ======
+        const page1 = document.getElementById('page-1');
+        const page2 = document.getElementById('page-2');
+        const page3 = document.getElementById('page-3');
+        const mainScreen = document.getElementById('main-screen');
+        const gasScreen = document.getElementById('gas-screen');
+        const gasTitle = document.getElementById('gas-title');
+
+        // ====== Bubble animation ======
+        const bubblesContainer = document.querySelector('.bubbles');
+        function createBubble() {
+            const bubble = document.createElement('div');
+            const size = Math.random() * 20 + 20;
+            bubble.classList.add('bubble');
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${Math.random() * 100}vw`;
+            const duration = Math.random() * 4 + 6;
+            bubble.style.animationDuration = `${duration}s`;
+            bubblesContainer.appendChild(bubble);
+            setTimeout(() => bubble.remove(), (duration + 1) * 1000);
+        }
+        setInterval(createBubble, 600);
+        for (let i = 0; i < 15; i++) setTimeout(createBubble, i * 200);
+
+        // ====== Helper functions ======
+        function stopVideo() {
+            const video = document.getElementById('demo-video');
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function resetFeedback() {
+            document.querySelectorAll('.feedback-soluble, .feedback-density').forEach(fb => fb.textContent = "");
+            document.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove("correct", "incorrect"));
+        }
+
+        function globalStopAllAudio() {
+            document.querySelectorAll("audio").forEach(a => {
+                a.pause();
+                a.currentTime = 0;
+            });
+        }
+
+        const demoVideo = document.getElementById('demo-video');
+
+        demoVideo.addEventListener('play', () => {
+            globalStopAllAudio();
+        });
+
+        // ====== Navigation buttons ======
+        document.getElementById('start-btn').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage2Timeouts();
+
+            page1.style.display = 'none';
+            page2.style.display = 'flex';
+
+            audio2.currentTime = 0;
+            audio2.play().catch(() => { });
+
+            startPage2Timing();
+        });
+
+        document.getElementById('back-to-1').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage2Timeouts();
+            resetPage2Methods();
+
+            page2.style.display = 'none';
+            page1.style.display = 'flex';
+        });
+
+        document.getElementById('next-to-3').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage2Timeouts();
+            resetPage2Methods();
+            clearPage3Timeouts();
+            resetPage3Table();
+
+            page2.style.display = 'none';
+            page3.style.display = 'flex';
+
+            audio3.currentTime = 0;
+            audio3.play().catch(() => { });
+
+            startPage3Timing();
+        });
+
+        document.getElementById('next-to-main').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage3Timeouts();
+            resetPage3Table();
+
+            page3.style.display = 'none';
+            mainScreen.style.display = 'flex';
+
+            audio4.play().catch(() => { });
+        });
+
+        document.getElementById('back-to-3').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage3Timeouts();
+            resetPage3Table();
+
+            mainScreen.style.display = 'none';
+            page3.style.display = 'flex';
+
+            audio3.currentTime = 0;
+            audio3.play().catch(() => { });
+
+            startPage3Timing();
+        });
+
+        document.getElementById('back-to-home').addEventListener('click', () => {
+            globalStopAllAudio();
+            mainScreen.style.display = 'none';
+            page1.style.display = 'flex';
+        });
+
+        document.getElementById('back-to-2').addEventListener('click', () => {
+            globalStopAllAudio();
+            clearPage3Timeouts();
+            resetPage3Table();
+
+            page3.style.display = 'none';
+            page2.style.display = 'flex';
+
+            audio2.currentTime = 0;
+            audio2.play().catch(() => { });
+
+            startPage2Timing();
+        });
+
+        // ====== GAS SELECTION ======
+        document.querySelectorAll('.gas-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                globalStopAllAudio();
+                resetFeedback();
+
+                const gas = btn.dataset.gas;
+                gasTitle.textContent = gas;
+
+                mainScreen.style.display = 'none';
+                gasScreen.style.display = 'flex';
+
+                const audioSet = {
+                    Hydrogen: { intro: audioHydrogen, correct: audioHydrogenCorrect, solubleWrong: audioHydrogenSolubleWrong, densityWrong: audioHydrogenDensityWrong, modal: audioHydrogenModal, buttonText: "Water Displacement", modalTitle: "Water Displacement", video: "demonstration/waterDisplacement.mp4" },
+                    Chlorine: { intro: audioChlorine, correct: audioChlorineCorrect, solubleWrong: audioChlorineSolubleWrong, densityWrong: audioChlorineDensityWrong, modal: audioChlorineModal, buttonText: "Downward Delivery", modalTitle: "Downward Delivery", video: "demonstration/downwardDelivery.mp4" },
+                    Ammonia: { intro: audioAmmonia, correct: audioAmmoniaCorrect, solubleWrong: audioAmmoniaSolubleWrong, densityWrong: audioAmmoniaDensityWrong, modal: audioAmmoniaModal, buttonText: "Upward Delivery", modalTitle: "Upward Delivery", video: "demonstration/upwardDelivery.mp4" }
+                }[gas];
+
+                audioSet.intro.currentTime = 0;
+                audioSet.intro.play().catch(() => { });
+
+                // Modal button update
+                const modal = document.getElementById("displacement-modal");
+                const modalBtn = document.getElementById("open-modal-btn");
+                const modalTitle = modal.querySelector("h2");
+                const demoVideo = document.getElementById("demo-video");
+                const videoSource = demoVideo.querySelector("source");
+
+                modalBtn.textContent = audioSet.buttonText;
+                modalTitle.textContent = audioSet.modalTitle;
+                videoSource.src = audioSet.video;
+                demoVideo.load();
+
+                const densityAnswer = { Hydrogen: "No", Chlorine: "Yes", Ammonia: "No" }[gas];
+                const solubilityAnswer = { Hydrogen: "Insoluble/slightly soluble", Chlorine: "Soluble", Ammonia: "Soluble" }[gas];
+
+                let solubilityCorrect = false;
+                let densityCorrect = false;
+
+                modalBtn.style.display = "none";
+
+                // Density buttons
+                gasScreen.querySelectorAll(".answer-btn.density").forEach(button => {
+                    button.onclick = () => {
+                        globalStopAllAudio();
+
+                        const feedback = document.querySelector(".feedback-density");
+                        feedback.textContent = "";
+                        gasScreen.querySelectorAll(".answer-btn.density").forEach(b => b.classList.remove("correct", "incorrect"));
+
+                        if (button.dataset.answer === densityAnswer) {
+                            button.classList.add("correct");
+                            feedback.textContent = "Correct!";
+                            audioSet.correct.play();
+                            densityCorrect = true;
+                        } else {
+                            button.classList.add("incorrect");
+                            feedback.textContent = `Review the properties of ${gas.toLowerCase()} and decide if it is denser than air.`;
+                            audioSet.densityWrong.play();
+                            densityCorrect = false;
+                        }
+                        modalBtn.style.display = solubilityCorrect && densityCorrect ? "inline-block" : "none";
+                    };
+                });
+
+                // Solubility buttons
+                gasScreen.querySelectorAll(".answer-btn.solubility").forEach(button => {
+                    button.onclick = () => {
+                        globalStopAllAudio();
+
+                        const feedback = document.querySelector(".feedback-soluble");
+                        feedback.textContent = "";
+                        gasScreen.querySelectorAll(".answer-btn.solubility").forEach(b => b.classList.remove("correct", "incorrect"));
+
+                        if (button.dataset.answer === solubilityAnswer) {
+                            button.classList.add("correct");
+                            feedback.textContent = "Correct!";
+                            audioSet.correct.play();
+                            solubilityCorrect = true;
+                        } else {
+                            button.classList.add("incorrect");
+                            feedback.textContent = `Review the properties of ${gas.toLowerCase()} and decide if it is soluble in water.`;
+                            audioSet.solubleWrong.play();
+                            solubilityCorrect = false;
+                        }
+                        modalBtn.style.display = solubilityCorrect && densityCorrect ? "inline-block" : "none";
+                    };
+                });
+
+                // Modal open
+                modalBtn.onclick = () => {
+                    globalStopAllAudio();
+                    modal.style.display = "flex";
+                    audioSet.modal.play();
+                };
+
+                // Modal close (X)
+                document.getElementById("close-modal-btn").onclick = () => {
+                    modal.style.display = "none";
+                    globalStopAllAudio();
+                    stopVideo();
+                };
+
+                // Click outside modal
+                modal.addEventListener("click", e => {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                        globalStopAllAudio();
+                        stopVideo();
+                    }
+                });
+
+                // Back to main
+                gasScreen.querySelector('#back-to-main').onclick = () => {
+                    globalStopAllAudio();
+                    resetFeedback();
+                    gasScreen.style.display = 'none';
+                    mainScreen.style.display = 'flex';
+                    audio4.play().catch(() => { });
+                };
+            });
+        });
+    </script>
+
+</body>
+
+</html>
