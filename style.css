@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -46,7 +50,7 @@ body {
 .content {
     position: relative;
     z-index: 10;
-    max-width: 900px;
+    max-width: 90%;
     margin: 0 auto;
     user-select: none;
     text-align: left;
@@ -56,8 +60,8 @@ body {
 }
 
 h1 {
-    font-size: 2.0rem;
-    margin-bottom: 3rem;
+    font-size: 2vw;
+    margin-bottom: 3vh;
     text-align: center;
     white-space: nowrap;
     color: #ffffff;
@@ -68,8 +72,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1000px;
-    gap: 100px;
+    max-width: 90%;
+    gap: 5%;
 }
 
 /* GAS BUTTONS */
@@ -88,8 +92,8 @@ h1 {
 }
 
 .gas-btn {
-    padding: 30px 50px;
-    font-size: 2rem;
+    padding: 2vh 3vw;
+    font-size: 2vw;
     flex: 1;
 }
 
@@ -121,10 +125,10 @@ h1 {
 /* GAS QUESTIONS */
 .gas-question {
     position: absolute;
-    top: 180px;
+    top: 18vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.9rem;
+    font-size: 1.9vw;
     color: #ffffff;
     text-shadow: 0 0 10px #919cff, 0 0 20px #655aff;
     margin: 0;
@@ -133,91 +137,63 @@ h1 {
 
 #gas-title {
     position: absolute;
-    top: 20px;
+    top: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3rem;
+    font-size: 3vw;
     color: #ffffff;
     text-shadow: 0 0 10px #919cff, 0 0 20px #655aff;
 }
 
 .methods div {
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     color: #ffffff;
-    margin: 10px 0;
+    margin: 1vh 0;
     text-shadow: 0 0 10px #919cff;
     text-align: center;
 }
 
 /* Page 3 title */
 .page3-title {
-    font-size: 1.5rem;
-    /* smaller than original h1 */
+    font-size: 1.5vw;
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #919cff, 0 0 16px #655aff;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    /* move closer to top */
+    margin-bottom: 2vh;
+    margin-top: 1vh;
 }
 
 /* Larger table */
 .info-table-large {
-    width: 100%;
-    /* bigger table */
-    margin: 0 auto 3rem auto;
-
-    font-size: 1.9rem;
-
+    width: 80%;
+    margin: 0 auto 3vh auto;
+    font-size: 1.9vw;
     color: #ffffff;
     text-shadow: 0 0 10px #919cff, 0 0 20px #655aff;
 }
 
 .info-table-large th,
 .info-table-large td {
-    padding: 1rem 1.5rem;
-    /* bigger padding */
+    padding: 1vh 1.5vw;
     border: 1px solid #ffffff;
     text-align: left;
-}
-
-/* BACK BUTTON */
-.back-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border-radius: 20px;
-    background-color: #9ecbff;
-    color: #2b3a66;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 10px 2px #8ab7ff;
-    transition: transform 0.2s ease;
-}
-
-.back-btn:hover {
-    background-color: #7eb8ff;
-    transform: scale(1.05);
-    color: white;
 }
 
 /* ANSWER OPTIONS */
 .answer-options {
     position: absolute;
     display: flex;
-    gap: 90px;
-    top: 250px;
+    gap: 5vw;
+    top: 25vh;
     left: 37%;
     justify-content: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 30%;
 }
 
 .answer-btn {
-    padding: 20px 60px;
-    font-size: 1.8rem;
+    padding: 2vh 4vw;
+    font-size: 1.8vw;
 }
 
 .answer-btn:hover {
@@ -253,12 +229,12 @@ h1 {
 /* FEEDBACK TEXT */
 .answer-feedback,
 .correct-feedback {
-    margin-top: 10px;
-    font-size: 1rem;
+    margin-top: 1vh;
+    font-size: 1vw;
     font-weight: bold;
     text-align: center;
     position: absolute;
-    top: 160px;
+    top: 16vh;
     width: 100%;
 }
 
@@ -268,18 +244,18 @@ h1 {
 
 .correct-feedback {
     color: #4caf50;
-    right: 5px;
+    right: 0.5%;
 }
 
 /* DELIVERY LABELS */
 .delivery-label,
 .displacement-label {
-    padding: 20px 60px;
+    padding: 2vh 4vw;
     border-radius: 25px;
     background-color: #4caf50;
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.8vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,17 +264,17 @@ h1 {
 }
 
 .delivery-label {
-    top: 250px;
+    top: 25vh;
 }
 
 .displacement-label {
-    top: 630px;
+    top: 63vh;
 }
 
 /* NAV & ARROWS */
 .nav-btn {
-    padding: 20px 60px;
-    font-size: 1.8rem;
+    padding: 2vh 4vw;
+    font-size: 1.8vw;
 }
 
 .nav-btn:hover {
@@ -319,34 +295,36 @@ h1 {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 6vh;
 }
 
 .arrow-btn {
     position: absolute;
-    bottom: 20px;
-    padding: 15px 40px;
-    font-size: 1.5rem;
+    bottom: 2vh;
+    padding: 1.5vh 3vw;
+    font-size: 1.5vw;
 }
 
 /* Arrow ID positions */
 #back-to-1,
 #back-to-2,
-#back-to-3,
-#back-to-main {
-    left: 60px;
-    bottom: 60px;
+#back-to-main,
+#back-to-3 {
+    left: 4%;
+    bottom: 6vh;
 }
 
 #next-to-3,
 #next-to-main {
-    right: 60px;
-    bottom: 60px;
+    right: 4%;
+    bottom: 6vh;
 }
 
 #back-to-home {
-    left: 60px;
-    bottom: 600px;
+    position: fixed;
+    left: 4%;
+    top: 2vh;
+    bottom: auto;
 }
 
 .arrow-btn:hover {
@@ -365,11 +343,11 @@ h1 {
 
 /* TABLE */
 .info-table {
-    margin-top: 2rem;
+    margin-top: 2vh;
     border-collapse: collapse;
-    font-size: 1.3rem;
+    font-size: 1.3vw;
     width: 100%;
-    max-width: 800px;
+    max-width: 80%;
     color: white;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
@@ -377,7 +355,7 @@ h1 {
 .info-table th,
 .info-table td {
     border: 1px solid #9ecbff;
-    padding: 15px;
+    padding: 1.5vh 1vw;
     text-align: left;
 }
 
@@ -396,9 +374,9 @@ h1 {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px;
-    margin-top: -180px;
-    gap: 180px;
+    max-width: 90%;
+    margin-top: -18vh;
+    gap: 12%;
     position: relative;
 }
 
@@ -406,7 +384,7 @@ h1 {
     position: relative;
     flex: 1;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 6vh;
 }
 
 .question-block .gas-question {
@@ -414,27 +392,27 @@ h1 {
     display: flex;
     justify-content: center;
     transform: none;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+    font-size: 1.6vw;
+    margin-bottom: 2vh;
     color: #ffffff;
     text-shadow: 0 0 10px #919cff, 0 0 20px #655aff;
-    gap: 50px;
-    top: 10px;
-    left: 40px;
+    gap: 3vw;
+    top: 1vh;
+    left: 0;
 }
 
 .question-block .answer-options {
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 70px;
-    top: 10px;
-    left: 70px;
+    gap: 4vw;
+    top: 1vh;
+    right: 4vw;
 }
 
 .question-block .answer-btn {
-    padding: 15px 40px;
-    font-size: 1.4rem;
+    padding: 1.5vh 3vw;
+    font-size: 1.4vw;
     box-shadow: 0 0 10px 2px #8ab7ff;
 }
 
@@ -458,13 +436,12 @@ h1 {
 
 /* Solubility feedback - slightly left */
 .feedback-soluble {
-    top: 190px;
+    top: 19vh;
     position: absolute;
     left: 45%;
-    /* move left from center */
     transform: translateX(-50%);
-    font-size: 1rem;
-    min-height: 25px;
+    font-size: 1vw;
+    min-height: 2.5vh;
     color: #ffffff;
     text-shadow: 0 0 3px #000;
     pointer-events: none;
@@ -473,13 +450,12 @@ h1 {
 
 /* Density feedback - slightly right */
 .feedback-density {
-    top: 190px;
+    top: 19vh;
     position: absolute;
     left: 55%;
-    /* move right from center */
     transform: translateX(-50%);
-    font-size: 1rem;
-    min-height: 25px;
+    font-size: 1vw;
+    min-height: 2.5vh;
     color: #ffffff;
     text-shadow: 0 0 3px #000;
     pointer-events: none;
@@ -498,22 +474,22 @@ h1 {
 /* MODAL */
 .modal-content video {
     border-radius: 12px;
-    margin-top: 10px;
+    margin-top: 1vh;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #open-modal-btn {
     position: fixed;
-    bottom: 60px;
+    bottom: 6vh;
     left: 55%;
     transform: translateX(-50%);
     background: #000000;
     border: none;
     border-radius: 25px;
-    padding: 20px 60px;
+    padding: 2vh 4vw;
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.8vw;
     cursor: pointer;
     box-shadow: 0 0 12px 2px #8ab7ff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -553,13 +529,18 @@ h1 {
     background-color: white;
     color: #2b3a66;
     border-radius: 20px;
-    padding: 10px 15px;
-    max-width: 800px;
+    padding: 1vh 1.5vw;
+    max-width: 60%;
     width: 90%;
     text-align: center;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    font-size: 2vw;
+    margin: 1vh 0;
 }
 
 @keyframes fadeIn {
@@ -576,8 +557,8 @@ h1 {
 
 .close-modal {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 1vh;
+    right: 1.5vw;
     background: #ff5c5c;
     color: white;
     border: none;

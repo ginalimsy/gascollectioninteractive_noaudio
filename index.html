@@ -67,9 +67,9 @@
             <button class="gas-btn" data-gas="Chlorine">Chlorine</button>
             <button class="gas-btn" data-gas="Ammonia">Ammonia</button>
         </div>
+        <button class="arrow-btn" id="back-to-home">HOME</button>
         <div class="nav-arrows">
             <button class="arrow-btn" id="back-to-3">BACK</button>
-            <button class="arrow-btn" id="back-to-home">HOME</button>
         </div>
         <audio id="audio4" src="audio/audio4.wav"></audio>
     </div>
@@ -88,7 +88,6 @@
                         soluble</button>
                 </div>
 
-                <!-- Corrected: only ONE feedback, using the new class -->
                 <div class="feedback-soluble"></div>
             </div>
 
@@ -100,7 +99,6 @@
                     <button class="answer-btn density" data-answer="No">No</button>
                 </div>
 
-                <!-- Corrected: only ONE feedback, using the new class -->
                 <div class="feedback-density"></div>
             </div>
 
@@ -169,7 +167,6 @@
                 methodItems[index].classList.add("method-highlight");
             }
 
-            // Store timeout IDs
             page2Timeouts.push(setTimeout(() => highlightMethod(0), 8000));
             page2Timeouts.push(setTimeout(() => highlightMethod(1), 10000));
             page2Timeouts.push(setTimeout(() => highlightMethod(2), 12000));
@@ -203,34 +200,29 @@
             }, 11000));
         }
 
-        // ====== Audio element references ======
         const audio1 = document.getElementById('audio1');
         const audio2 = document.getElementById('audio2');
         const audio3 = document.getElementById('audio3');
         const audio4 = document.getElementById('audio4');
 
-        // Hydrogen audios
         const audioHydrogen = document.getElementById('audioHydrogen');
         const audioHydrogenCorrect = document.getElementById('audioHydrogenCorrect');
         const audioHydrogenSolubleWrong = document.getElementById('audioHydrogenSolubleWrong');
         const audioHydrogenDensityWrong = document.getElementById('audioHydrogenDensityWrong');
         const audioHydrogenModal = document.getElementById('audioHydrogenModal');
 
-        // Chlorine audios
         const audioChlorine = document.getElementById('audioChlorine');
         const audioChlorineCorrect = document.getElementById('audioChlorineCorrect');
         const audioChlorineSolubleWrong = document.getElementById('audioChlorineSolubleWrong');
         const audioChlorineDensityWrong = document.getElementById('audioChlorineDensityWrong');
         const audioChlorineModal = document.getElementById('audioChlorineModal');
 
-        // Ammonia audios
         const audioAmmonia = document.getElementById('audioAmmonia');
         const audioAmmoniaCorrect = document.getElementById('audioAmmoniaCorrect');
         const audioAmmoniaSolubleWrong = document.getElementById('audioAmmoniaSolubleWrong');
         const audioAmmoniaDensityWrong = document.getElementById('audioAmmoniaDensityWrong');
         const audioAmmoniaModal = document.getElementById('audioAmmoniaModal');
 
-        // ====== Page elements ======
         const page1 = document.getElementById('page-1');
         const page2 = document.getElementById('page-2');
         const page3 = document.getElementById('page-3');
@@ -238,7 +230,6 @@
         const gasScreen = document.getElementById('gas-screen');
         const gasTitle = document.getElementById('gas-title');
 
-        // ====== Bubble animation ======
         const bubblesContainer = document.querySelector('.bubbles');
         function createBubble() {
             const bubble = document.createElement('div');
@@ -255,7 +246,6 @@
         setInterval(createBubble, 600);
         for (let i = 0; i < 15; i++) setTimeout(createBubble, i * 200);
 
-        // ====== Helper functions ======
         function stopVideo() {
             const video = document.getElementById('demo-video');
             video.pause();
@@ -280,7 +270,6 @@
             globalStopAllAudio();
         });
 
-        // ====== Navigation buttons ======
         document.getElementById('start-btn').addEventListener('click', () => {
             globalStopAllAudio();
             clearPage2Timeouts();
@@ -364,7 +353,6 @@
             startPage2Timing();
         });
 
-        // ====== GAS SELECTION ======
         document.querySelectorAll('.gas-btn').forEach(btn => {
             btn.addEventListener('click', () => {
 
@@ -386,7 +374,6 @@
                 audioSet.intro.currentTime = 0;
                 audioSet.intro.play().catch(() => { });
 
-                // Modal button update
                 const modal = document.getElementById("displacement-modal");
                 const modalBtn = document.getElementById("open-modal-btn");
                 const modalTitle = modal.querySelector("h2");
@@ -406,7 +393,6 @@
 
                 modalBtn.style.display = "none";
 
-                // Density buttons
                 gasScreen.querySelectorAll(".answer-btn.density").forEach(button => {
                     button.onclick = () => {
                         globalStopAllAudio();
@@ -430,7 +416,6 @@
                     };
                 });
 
-                // Solubility buttons
                 gasScreen.querySelectorAll(".answer-btn.solubility").forEach(button => {
                     button.onclick = () => {
                         globalStopAllAudio();
@@ -454,21 +439,18 @@
                     };
                 });
 
-                // Modal open
                 modalBtn.onclick = () => {
                     globalStopAllAudio();
                     modal.style.display = "flex";
                     audioSet.modal.play();
                 };
 
-                // Modal close (X)
                 document.getElementById("close-modal-btn").onclick = () => {
                     modal.style.display = "none";
                     globalStopAllAudio();
                     stopVideo();
                 };
 
-                // Click outside modal
                 modal.addEventListener("click", e => {
                     if (e.target === modal) {
                         modal.style.display = "none";
@@ -477,7 +459,6 @@
                     }
                 });
 
-                // Back to main
                 gasScreen.querySelector('#back-to-main').onclick = () => {
                     globalStopAllAudio();
                     resetFeedback();
