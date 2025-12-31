@@ -62,15 +62,17 @@ body {
 h1 {
     font-size: 2vw;
     margin-bottom: 3vh;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
     color: #ffffff;
     text-shadow: 0 0 10px #919cff, 0 0 20px #655aff;
+    width: 100%;
+    max-width: 90%;
 }
 
 .options {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     max-width: 90%;
     gap: 5%;
@@ -436,7 +438,7 @@ h1 {
 
 /* Solubility feedback - slightly left */
 .feedback-soluble {
-    top: 19vh;
+    top: 24vh;
     position: absolute;
     left: 45%;
     transform: translateX(-50%);
@@ -450,7 +452,7 @@ h1 {
 
 /* Density feedback - slightly right */
 .feedback-density {
-    top: 19vh;
+    top: 24vh;
     position: absolute;
     left: 55%;
     transform: translateX(-50%);
